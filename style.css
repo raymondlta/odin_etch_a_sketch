@@ -6,3 +6,21 @@ testing
 }
 */
 
+.container {
+    border: solid;
+    border-color: black;
+    display: flex;
+}
+
+.miniContainer {
+    border: solid;
+    border-color: blue;
+    flex: 1;
+}
+
+.pixel {
+    padding: 5px 5px;
+    border: solid;
+    border-color: red;
+    background-color: white;
+}

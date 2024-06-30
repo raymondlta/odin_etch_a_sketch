@@ -1,24 +1,28 @@
 const container = document.querySelector(".container");
-container.setAttribute("style", "border: solid; border-color: black;");
+//container.setAttribute("style", "border: solid; border-color: black;");
 
-function createGrid() {
-    const range = 16;
-
-    for (let i = 0; i < range; i++) {
-        const mini_container = document.createElement("div");
-        mini_container.setAttribute("style", "border: solid; border-color: blue;");
-        container.appendChild(mini_container);
-        for (let j = 0; j < range; j++) {
+function createGrid(gridSize) {
+    for (let i = 0; i < gridSize; i++) {
+        const miniContainer = document.createElement("div");
+        //miniContainer.setAttribute("style", "border: solid; border-color: blue; flex: 1;");
+        miniContainer.classList.add("miniContainer");
+        container.appendChild(miniContainer);
+        for (let j = 0; j < gridSize; j++) {
             const box = document.createElement("div");
-            box.setAttribute("style", "border: solid; border-color: red; margin: 2px;");
-            mini_container.appendChild(box);
+            //box.setAttribute("style", "border: solid; border-color: red;");
+            box.classList.add("pixel");
+            miniContainer.appendChild(box);
         }
     }
 }
 
-/*
-testing how to add classes from css
-const val = document.createElement("div");
-val.classList.add("val");
-container.appendChild(val);
-*/
+createGrid(16);
+
+const pixels = document.querySelectorAll(".pixel");
+
+for (let i = 0; i < pixels.length; ++i) {
+    const pixel = pixels[i];
+    pixel.addEventListener("mouseover", function (e) {
+        pixel.style["background-color"] = "black";
+    });
+}
