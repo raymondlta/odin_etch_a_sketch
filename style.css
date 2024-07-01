@@ -1,26 +1,21 @@
-/*
-testing
-.val {
-    border: 2px solid orange;
-    padding: 10px 10px;
-}
-*/
-
 .container {
-    border: solid;
-    border-color: black;
+    /*border: solid;
+    border-color: black;*/
     display: flex;
+    flex-direction: column;
+    height: 90vh;
 }
 
 .miniContainer {
-    border: solid;
-    border-color: blue;
-    flex: 1;
+    /*border: solid;
+    border-color: blue;*/
+    display: flex;
+    flex: 1 1 0;
 }
 
 .pixel {
-    padding: 5px 5px;
     border: solid;
     border-color: red;
     background-color: white;
+    flex: 1 1 0;
 }
