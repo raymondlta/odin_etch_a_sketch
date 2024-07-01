@@ -17,6 +17,8 @@
 }
 
 .pixel {
+    /*background-color: black;
+    opacity: 0;*/
     background-color: white;
     flex: 1 1 0;
 }

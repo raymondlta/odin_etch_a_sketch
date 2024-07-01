@@ -13,6 +13,7 @@ function createGrid(gridSize) {
             miniContainer.appendChild(box);
             box.addEventListener("mouseover", function () {
                 box.style["background-color"] = "black";
+                //box.style["opacity"] += 0.1;
             });
         }
     }
