@@ -17,8 +17,50 @@
 }
 
 .pixel {
-    /*background-color: black;
-    opacity: 0;*/
-    background-color: white;
+    background-color: black;
     flex: 1 1 0;
+}
+
+.zeroPercent {
+    opacity: 0;
+}
+
+.tenPercent {
+    opacity: 0.1;
+}
+
+.twentyPercent {
+    opacity: 0.2;
+}
+
+.thirtyPercent {
+    opacity: 0.3;
+}
+
+.fortyPercent {
+    opacity: 0.4;
+}
+
+.fiftyPercent {
+    opacity: 0.5;
+}
+
+.sixtyPercent {
+    opacity: 0.6;
+}
+
+.seventyPercent {
+    opacity: 0.7;
+}
+
+.eightyPercent {
+    opacity: 0.8;
+}
+
+.ninetyPercent {
+    opacity: 0.9;
+}
+
+.hundredPercent {
+    opacity: 1;
 }
