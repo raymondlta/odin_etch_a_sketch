@@ -1,28 +1,44 @@
 const container = document.querySelector(".container");
-//container.setAttribute("style", "border: solid; border-color: black;");
+const resetBtn = document.querySelector(".resetBtn");
 
 function createGrid(gridSize) {
     for (let i = 0; i < gridSize; i++) {
         const miniContainer = document.createElement("div");
-        //miniContainer.setAttribute("style", "border: solid; border-color: blue; flex: 1;");
         miniContainer.classList.add("miniContainer");
         container.appendChild(miniContainer);
         for (let j = 0; j < gridSize; j++) {
             const box = document.createElement("div");
-            //box.setAttribute("style", "border: solid; border-color: red;");
             box.classList.add("pixel");
             miniContainer.appendChild(box);
+            box.addEventListener("mouseover", function () {
+                box.style["background-color"] = "black";
+            });
         }
     }
 }
 
-createGrid(16);
-
-const pixels = document.querySelectorAll(".pixel");
-
-for (let i = 0; i < pixels.length; ++i) {
-    const pixel = pixels[i];
-    pixel.addEventListener("mouseover", function (e) {
-        pixel.style["background-color"] = "black";
-    });
+function clearGrid() {
+    const range = container.children.length;
+    for (let i = 0; i < range; i++) {
+        container.removeChild(container.lastChild);
+    }
 }
+
+resetBtn.addEventListener("click", function () {
+    const size = parseInt(prompt("Enter an integer from 0 to 100: "));
+
+    if (size < 0 || size > 100 || !size) {
+        if (container.lastChild.className !== "error") {
+            const error = document.createElement("div");
+            error.classList.add("error");
+            error.textContent = "That is not a valid input, try again...";
+            container.appendChild(error);
+        }
+    }
+    else {
+        clearGrid();
+        createGrid(size);
+    }
+});
+
+createGrid(16);
